@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+  <info organisation="com.amy.plugin" module="replugin-host-gradle" revision="2.3.4.4" status="integration" publication="20211106114326">
+    <description/>
+  </info>
+  <configurations>
+    <conf name="archives" visibility="public" description="Configuration for archive artifacts."/>
+    <conf name="compile" visibility="private" description="Dependencies for source set 'main'."/>
+    <conf name="compileClasspath" visibility="private" description="Compile classpath for source set 'main'." extends="compileOnly"/>
+    <conf name="compileOnly" visibility="private" description="Compile dependencies for source set 'main'." extends="compile"/>
+    <conf name="default" visibility="public" description="Configuration for default artifacts." extends="runtime"/>
+    <conf name="runtime" visibility="private" description="Runtime dependencies for source set 'main'." extends="compile"/>
+    <conf name="testCompile" visibility="private" description="Dependencies for source set 'test'." extends="compile"/>
+    <conf name="testCompileClasspath" visibility="private" description="Compile classpath for source set 'test'." extends="testCompileOnly"/>
+    <conf name="testCompileOnly" visibility="private" description="Compile dependencies for source set 'test'." extends="testCompile"/>
+    <conf name="testRuntime" visibility="private" description="Runtime dependencies for source set 'test'." extends="runtime,testCompile"/>
+  </configurations>
+  <publications>
+    <artifact name="replugin-host-gradle" type="jar" ext="jar" conf="archives,runtime"/>
+  </publications>
+  <dependencies>
+    <dependency org="com.android.tools.build" name="gradle" rev="2.1.3" conf="compile-&gt;default"/>
+    <dependency org="org.json" name="json" rev="20160212" conf="compile-&gt;default"/>
+    <dependency org="org.codehaus.groovy" name="groovy" rev="2.4.7" conf="compile-&gt;default"/>
+    <dependency org="com.squareup" name="javapoet" rev="1.5.1" conf="compile-&gt;default"/>
+    <dependency org="com.google.gradle" name="osdetector-gradle-plugin" rev="1.2.1" conf="compile-&gt;default"/>
+    <dependency org="net.dongliu" name="apk-parser" rev="2.2.0" conf="compile-&gt;default"/>
+  </dependencies>
+</ivy-module>
