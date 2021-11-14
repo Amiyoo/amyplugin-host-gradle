@@ -53,5 +53,5 @@ dependencies {
     compile 'net.dongliu:apk-parser:2.2.0'
 }
 
-project.ext.RP_ARTIFACT_ID = 'amyplugin-host-gradle'
-apply from: '../rp-publish.gradle'
+//project.ext.RP_ARTIFACT_ID = 'amyplugin-host-gradle'
+//apply from: '../rp-publish.gradle'
